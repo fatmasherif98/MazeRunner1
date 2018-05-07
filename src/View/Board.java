@@ -13,14 +13,21 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import Controller.GameController;
+import Model.BigGift;
+import Model.Bomb;
+import Model.Gift;
 import Model.Map;
 import Model.Player;
+import Model.SmallGift;
+import Model.StrongBomb;
+import Model.WeakBomb;
 
 
 public class Board extends JPanel implements ActionListener
-{	
+{	private Bomb bomb;
 	private Timer timer;
 	private Player p;
+	private Gift gift;
 	private static Board boardInstance = null;
 	private Model.Map map;
 	private GameController viewController;
@@ -32,16 +39,25 @@ public class Board extends JPanel implements ActionListener
 	}
 	
 private Board(GameController viewController) {
+	super();
+	super.setBounds(0, 0, 20*30, 20*30);
 	this.viewController = viewController;
 	map=new Model.Map();
-	p=new Player();
+	p=viewController.getPlayer();
 	keylistener=new  Controller.KeyListener(map, p);
 	addKeyListener(keylistener);
 	setFocusable(true);
 }
+public Player getP() {
+	return p;
+}
+
+public void setP(Player p) {
+	this.p = p;
+}
+
 /*private Board( GameController viewController) {
-		super();
-		super.setBounds(143, 105, 1700, 800);
+		
 		this.viewController = viewController;
 		timer = new Timer(25, (ActionListener) this);
 		timer.start();
@@ -63,31 +79,29 @@ public void actionPerformed( ActionEvent e) {
 				} 
 				else if(map.getMap(x, y).equals("f"))
 					g.drawImage(map.getFinish(), x*20, y*20, null);
+				else if(map.getMap(x, y).equals("b"))
+				{
+					bomb=new WeakBomb();
+					g.drawImage(bomb.getImage(), x*20, y*20, null);
+				}
+				else if(map.getMap(x, y).equals("B"))
+				{
+					bomb=new StrongBomb();
+					g.drawImage(bomb.getImage(), x*20, y*20, null);
+				}
+				else if(map.getMap(x, y).equals("c"))
+				{
+					gift=new SmallGift();
+					g.drawImage(gift.getGiftImage(), x*20, y*20, null);
+				}	
+				else if(map.getMap(x, y).equals("C"))
+				{
+					gift=new BigGift();
+					g.drawImage(gift.getGiftImage(), x*20, y*20, null);
+				}		
 			}
 		}
 		g.drawImage(p.getPlayer(), p.getTileX()*20, p.getTileY()*20, null);
 		repaint();
-	}
-
-	public class Al extends KeyAdapter{
-		public void keyPressed (KeyEvent e)
-		{ int keycode=e.getKeyCode();
-		if(keycode==KeyEvent.VK_UP)
-		{   if(!map.getMap(p.getTileX(), p.getTileY()-1).equals("w"))
-			p.move( 0,-1);
-		}
-		if(keycode==KeyEvent.VK_DOWN)
-		{ if(!map.getMap(p.getTileX(), p.getTileY()+1).equals("w"))
-			p.move( 0, 1);
-		}
-		if(keycode==KeyEvent.VK_LEFT)
-		{ if(!map.getMap(p.getTileX()-1, p.getTileY()).equals("w"))
-			p.move( -1, 0);
-		}
-		if(keycode==KeyEvent.VK_RIGHT)
-		{ if(!map.getMap(p.getTileX()+1, p.getTileY()).equals("w"))
-			p.move( 1, 0);
-		}
-		}
 	}
 }

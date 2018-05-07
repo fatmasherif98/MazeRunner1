@@ -10,6 +10,7 @@ public class Map {
 private Scanner scan;
 private String Map[] = new String[30];
 private Image grass, wall,finish;
+
 public Map() {
 	//ImageIcon img = new ImageIcon("/MazeRunner/src/images/icons8-oak-tree-30.png");
 	ImageIcon img = new ImageIcon("C:\\Users\\Lenovo\\Documents\\GitHub\\MazeRunner1\\src\\images\\icons8-oak-tree-30.png");
@@ -37,8 +38,8 @@ public Image getGrass() {
 public Image getWall() {
 	return wall;
 }
+
 public void openFile() {
-	System.out.println("Inside open");
 	try {		//System.out.println("FILE OPENED");
 		scan = new Scanner( new File("Map.txt"));
 
