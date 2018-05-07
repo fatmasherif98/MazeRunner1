@@ -9,8 +9,9 @@ public class Launcher {
 		JFrame f = new JFrame();
 		f.setTitle("MazeRunner");
 		f.add(new Board());
-		f.setSize(464,485);
+		f.setSize(20*31,20*32);
 		f.setLocationRelativeTo(null);
+		//f.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
