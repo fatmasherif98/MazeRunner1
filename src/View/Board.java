@@ -12,26 +12,31 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import Controller.GameController;
 import Model.Map;
 import Model.Player;
 
 
-public class Board extends JPanel implements ActionListener{
-	
+public class Board extends JPanel implements ActionListener
+{	
 	private Timer timer;
 	private Player p;
 	private static Board boardInstance = null;
 	private Model.Map map;
- 
-/*	public static Board getBoard(GameController viewController) {
+	private GameController viewController;
+	private Controller.KeyListener keylistener;
+	public static Board getBoard(GameController viewController) {
 		if (boardInstance == null)
 			boardInstance = new Board(viewController);
 		return boardInstance;
-	}*/
-public Board() {
+	}
+	
+private Board(GameController viewController) {
+	this.viewController = viewController;
 	map=new Model.Map();
 	p=new Player();
-	addKeyListener(new Al());
+	keylistener=new  Controller.KeyListener(map, p);
+	addKeyListener(keylistener);
 	setFocusable(true);
 }
 /*private Board( GameController viewController) {

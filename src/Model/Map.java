@@ -39,7 +39,7 @@ public Image getWall() {
 }
 public void openFile() {
 	System.out.println("Inside open");
-	try {		System.out.println("FILE OPENED");
+	try {		//System.out.println("FILE OPENED");
 		scan = new Scanner( new File("Map.txt"));
 
 		
@@ -54,7 +54,7 @@ public void readFile() {
 	while(scan.hasNext()) {		
 		for( i=0; i<30; i++) {
 			Map[i] = scan.next();
-			System.out.println("map i"+Map[i]);
+		//	System.out.println("map i"+Map[i]);
 		}
 	}
 	
