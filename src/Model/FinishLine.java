@@ -12,7 +12,7 @@ public class FinishLine implements CellState{
 	Image Finishimg;
 	public FinishLine(Cell newCell) {
 		cell = newCell;
-		img = new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\icons8-door-26.png");
+		img = new ImageIcon(this.getClass().getResource("/images/icons8-door-26.png"));
 		Finishimg = img.getImage();
 	}
 	@Override

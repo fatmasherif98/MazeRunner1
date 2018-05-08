@@ -15,7 +15,7 @@ public class WeakBomb extends Bomb implements CellState
 	private Board board;
 	private Model.Map mapClass;
 	private String[][] mapArray;
-	ImageIcon img= new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\bomb.png");
+	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/bomb.png"));
 
 
 	public WeakBomb(Cell newCell) 

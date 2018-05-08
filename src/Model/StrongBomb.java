@@ -13,7 +13,7 @@ public class StrongBomb extends Bomb implements CellState {
 	private Board board;
 	private Model.Map mapClass;
 	private String[][] mapArray;
-	ImageIcon img= new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\icons8-grenade-26.png");
+	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/icons8-grenade-26.png"));
 	public StrongBomb(Cell newCell) 
 	{
 		setDecreaseFactor(6);

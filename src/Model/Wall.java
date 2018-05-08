@@ -12,7 +12,7 @@ public class Wall implements CellState {
 	
 	public Wall(Cell newCell) {
 		cell = newCell;
-		img = new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\icons8-brick-wall-30.png");
+		img = new ImageIcon(this.getClass().getResource("/images/icons8-brick-wall-30.png"));
 		Wallimg = img.getImage();
 	}
 public void draw(int x, int y, Graphics g) {

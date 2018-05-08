@@ -12,7 +12,7 @@ public class Tree implements CellState{
 	
 	public Tree( Cell newCell) {
 		cell = newCell;
-		img = new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\icons8-oak-tree-30.png");
+		img = new ImageIcon(this.getClass().getResource("/images/icons8-oak-tree-30.png"));
 		Treeimg = img.getImage();
 	}
 	public void draw(int x, int y, Graphics g) {
