@@ -2,12 +2,12 @@ package Model;
 
 import java.awt.Image;
 
+import javax.print.DocFlavor.URL;
 import javax.swing.ImageIcon;
 
 public class WeakBomb extends Bomb
 {
-	
-	ImageIcon img= new ImageIcon("C:\\Users\\Lenovo\\Documents\\GitHub\\MazeRunner1\\src\\images\\bomb.png");
+	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/bomb.png"));
 
 	public WeakBomb() 
 	{   

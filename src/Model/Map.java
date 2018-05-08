@@ -13,11 +13,11 @@ private Image grass, wall,finish;
 
 public Map() {
 	//ImageIcon img = new ImageIcon("/MazeRunner/src/images/icons8-oak-tree-30.png");
-	ImageIcon img = new ImageIcon("C:\\Users\\Lenovo\\Documents\\GitHub\\MazeRunner1\\src\\images\\icons8-oak-tree-30.png");
+	ImageIcon img =new ImageIcon(this.getClass().getResource("/images/icons8-oak-tree-30.png"));
 	grass = img.getImage();
-	 img = new ImageIcon("C:\\Users\\Lenovo\\Documents\\GitHub\\MazeRunner1\\src\\images\\icons8-brick-wall-30.png");
+	 img = new ImageIcon(this.getClass().getResource("/images/icons8-brick-wall-30.png"));
 	wall = img.getImage();
-	img= new ImageIcon("C:\\Users\\Lenovo\\Documents\\GitHub\\MazeRunner1\\src\\images\\icons8-door-26.png");
+	img= new ImageIcon(this.getClass().getResource("/images/icons8-door-26.png"));
 	finish=img.getImage();
 	openFile();
 	readFile();

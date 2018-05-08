@@ -13,7 +13,7 @@ public class Player   {
 	
 public Player()
 { 	
-	ImageIcon img= new ImageIcon("C:\\Users\\Lenovo\\Documents\\GitHub\\MazeRunner1\\src\\images\\icons8-penguin-24.png");
+	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/icons8-penguin-24.png"));
 	player=img.getImage();
 	TileX=1;
 	TileY=1;
