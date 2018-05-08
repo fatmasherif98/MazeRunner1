@@ -3,17 +3,22 @@ package Model;
 import java.awt.Graphics;
 import java.awt.Image;
 
+import javax.print.DocFlavor.URL;
 import javax.swing.ImageIcon;
 
 import View.Board;
 
 public class WeakBomb extends Bomb implements CellState
 {
+<<<<<<< HEAD
 	Cell cell;
 	private Board board;
 	private Model.Map mapClass;
 	private String[][] mapArray;
 	ImageIcon img= new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\bomb.png");
+=======
+	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/bomb.png"));
+>>>>>>> 849b462c6e78d87a5b77b4583434deb561c592d3
 
 	public WeakBomb(Cell newCell) 
 	{   
