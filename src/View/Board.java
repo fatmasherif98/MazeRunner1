@@ -15,6 +15,7 @@ import javax.swing.Timer;
 import Controller.GameController;
 import Model.BigGift;
 import Model.Bomb;
+import Model.Cell;
 import Model.Gift;
 import Model.Map;
 import Model.Player;
@@ -32,21 +33,31 @@ public class Board extends JPanel implements ActionListener
 	private Model.Map map;
 	private GameController viewController;
 	private Controller.KeyListener keylistener;
-	public static Board getBoard(GameController viewController) {
+	private Cell cell;
+	public static Board getBoard() {
 		if (boardInstance == null)
-			boardInstance = new Board(viewController);
+			boardInstance = new Board();
 		return boardInstance;
 	}
 	
-private Board(GameController viewController) {
+public Model.Map getMap() {
+		return map;
+	}
+
+	public void setMap(Model.Map map) {
+		this.map = map;
+	}
+
+private Board() {
 	super();
 	super.setBounds(0, 0, 20*30, 20*30);
 	this.viewController = viewController;
 	map=new Model.Map();
-	p=viewController.getPlayer();
-	keylistener=new  Controller.KeyListener(map, p);
-	addKeyListener(keylistener);
+	p=new Player();
+	keylistener=new Controller.KeyListener(map, p,this);
+	addKeyListener(keylistener);	
 	setFocusable(true);
+	cell = new Cell();
 }
 public Player getP() {
 	return p;
@@ -62,46 +73,29 @@ public void setP(Player p) {
 		timer = new Timer(25, (ActionListener) this);
 		timer.start();
 	}*/
-public void actionPerformed( ActionEvent e) {
-	repaint();
-}
-	
-	protected void paintComponent(Graphics g) {
+//public void actionPerformed( ActionEvent e) {
+	//repaint();
+//}
+
+protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		map.openFile();
-		map.readFile();
-		for(int y=0; y<30; y++) {
-			for( int x=0; x<30; x++) {
-				if( map.getMap(x, y).equals("g")) {
-					g.drawImage(map.getGrass(), x*20, y*20,null);
-				} else if( map.getMap(x, y).equals("w")) {
-					g.drawImage(map.getWall(), x*20, y*20, null);
-				} 
-				else if(map.getMap(x, y).equals("f"))
-					g.drawImage(map.getFinish(), x*20, y*20, null);
-				else if(map.getMap(x, y).equals("b"))
-				{
-					bomb=new WeakBomb();
-					g.drawImage(bomb.getImage(), x*20, y*20, null);
-				}
-				else if(map.getMap(x, y).equals("B"))
-				{
-					bomb=new StrongBomb();
-					g.drawImage(bomb.getImage(), x*20, y*20, null);
-				}
-				else if(map.getMap(x, y).equals("c"))
-				{
-					gift=new SmallGift();
-					g.drawImage(gift.getGiftImage(), x*20, y*20, null);
-				}	
-				else if(map.getMap(x, y).equals("C"))
-				{
-					gift=new BigGift();
-					g.drawImage(gift.getGiftImage(), x*20, y*20, null);
-				}		
+		//map.openFile();
+		//map.readFile();
+		for(int y=0; y<30; y++) 
+		{
+			for( int x=0; x<30; x++) 
+			{			
+				cell.setCellState(map.getMap(x, y));
+				cell.draw(x,y,g);
 			}
 		}
 		g.drawImage(p.getPlayer(), p.getTileX()*20, p.getTileY()*20, null);
-		repaint();
+	//	repaint();
 	}
+
+@Override
+public void actionPerformed(ActionEvent arg0) {
+	// TODO Auto-generated method stub
+	
+}
 }

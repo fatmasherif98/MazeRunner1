@@ -8,7 +8,7 @@ import java.awt.Color;
 public class Launcher 
 {
 	private GameController viewController = new GameController();
-	public Board board = Board.getBoard(viewController);
+	public Board board = Board.getBoard();
 	private ScorePanel scorepanel=new ScorePanel();
 	public static void main(String[] args) {
 	new Launcher();

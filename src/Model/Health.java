@@ -4,10 +4,14 @@ import java.util.Observable;
 
 public class Health extends Observable
 {
+	
 private int Health;
 public Health() {
 	Health=6;
 }
+
+
+
 public int getHealth() {
 	return Health;
 }

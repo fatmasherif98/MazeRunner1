@@ -14,4 +14,5 @@ public Player getPlayer() {
 public void setPlayer(Player player) {
 	this.player = player;
 }
+
 }
