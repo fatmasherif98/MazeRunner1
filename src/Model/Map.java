@@ -12,7 +12,6 @@ private String Map[] = new String[30];
 private String MapArray[][] = new String[30][30];
 
 public Map() {
-	//ImageIcon img = new ImageIcon("/MazeRunner/src/images/icons8-oak-tree-30.png");
 	openFile();
 	readFile();
 //	closeFile();

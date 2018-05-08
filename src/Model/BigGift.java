@@ -10,6 +10,7 @@ import View.Board;
 
 public class BigGift extends Gift implements CellState
 {
+
 	Cell cell;
 	ImageIcon img= new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\icons8-gift-16 (1).png");
 	private Board board;

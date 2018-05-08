@@ -10,7 +10,7 @@ public class SmallGift extends Gift implements CellState
 {
 	Cell cell;
 	private  Model.Map mapClass;
-private Board board;
+    private Board board;
 	private String[][] mapArray;
 	ImageIcon img= new ImageIcon("C:\\Users\\lenovo\\eclipse-workspace\\MazeRunner\\MazeRunner\\src\\images\\icons8-gift-16.png");
 	public SmallGift(Cell newCell)
