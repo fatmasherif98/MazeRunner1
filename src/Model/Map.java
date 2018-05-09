@@ -31,8 +31,9 @@ public void setMapArray(String[][] mapArray) {
 
 public void openFile() {
 	try {		//System.out.println("FILE OPENED");
-		scan = new Scanner( new File("Map.txt"));
-
+		//scan = new Scanner( new File("Map.txt"));
+		scan =new Scanner( new File(getClass().getResource("/Files/Map.txt").getFile()));
+		
 		
 	} catch( Exception e) {
 		System.out.println("Error loading map");
