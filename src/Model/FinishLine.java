@@ -5,11 +5,14 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+import View.Board;
+
 public class FinishLine implements CellState{
 
 	Cell cell;
 	ImageIcon img;
 	Image Finishimg;
+	private Board board;
 	public FinishLine(Cell newCell) {
 		cell = newCell;
 		img = new ImageIcon(this.getClass().getResource("/images/icons8-door-26.png"));
@@ -21,9 +24,12 @@ public class FinishLine implements CellState{
 		g.drawImage(Finishimg, x*20, y*20,null);
 	}
 	
-	public void move(int dx, int dy,Player p) 
+	public void move(int dx, int dy,PlayerInterface p) 
 	{
-		p.movePlayer(0, 0);
+		//p.movePlayer(0, 0);
+		board = Board.getBoard();
+		board.setCheckWin(true);
+		
 	}
 	
 

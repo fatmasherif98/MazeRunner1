@@ -6,28 +6,28 @@ import java.util.Observable;
 
 import javax.swing.ImageIcon;
 
-public class Player implements CellState   {	
+import View.Board;
+
+public class Player implements  PlayerInterface {	
 	private int TileX,TileY;
 	private Image player;
 	private ScoreClass score;
 	private Health health;
-	Cell cell;
+	private String PlayerType;
+	private Board board;
 	
 public Player() 
 { 	
-
 	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/icons8-penguin-24.png"));
-
 	player=img.getImage();
 	TileX=1;
 	TileY=1;
 	score=new ScoreClass();
 	health = new Health();
+	PlayerType = "player";
 }
 
-public Player(Cell newCell) {
-	cell = newCell;
-}
+
 public ScoreClass getScore() {
 	return score;
 }
@@ -72,22 +72,33 @@ public void setPlayer(Image player) {
 	this.player = player;
 }
 
-public void movePlayer(int dx , int dy)
-{    
+public void movePlayer(Cell state,String type,int dx , int dy)
+{   state.setCellState(type);
+	board=Board.getBoard();
+	state.move(dx, dy,board.getP());
 	System.out.println("player moving");
+	if(!type.equals("w"))
+	{
 	TileX+=dx;
 	TileY+=dy;
+	}
 }
+
 
 public void draw(int x, int y, Graphics g) {
 	g.drawImage(player, x*20, y*20,null);
 }
 
+
 @Override
-public void move(int dx, int dy, Player p) {
-	// TODO Auto-generated method stub
+public String Description() {
 	
+	return PlayerType;
 }
+
+
+
+
 
 
 }

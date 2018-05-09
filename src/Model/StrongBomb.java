@@ -25,14 +25,23 @@ public class StrongBomb extends Bomb implements CellState {
 		g.drawImage(this.getImage(), x*20, y*20,null);
 	}
 	
-	public void move(int dx, int dy,Player p) {
+	public void move(int dx, int dy,PlayerInterface p) {
 		board = Board.getBoard();
 		mapClass = board.getMap();
 		mapArray = mapClass.getMapArray();
 		mapArray[p.getTileX()+dx][p.getTileY()+dy]="g";
+		if(p.Description().equals("player")) 
+		{ System.out.println("p description "+p.Description());
 		int health =p.getHealth().getHealth()-this.getDecreaseFactor();
 		p.getHealth().setHealth(health);
-		p.movePlayer(dx, dy);
+		
+		} 
+		else {
+			p=new PlayerWithoutArmor(p);
+			board = Board.getBoard();
+			board.setP(p);
+		}
+		//p.movePlayer(dx, dy);
 	}
 	
 }

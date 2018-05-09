@@ -28,7 +28,7 @@ public class BigGift extends Gift implements CellState
 		g.drawImage(this.getGiftImage(), x*20, y*20,null);
 	}
 	
-	public void move(int dx, int dy,Player p)
+	public void move(int dx, int dy,PlayerInterface p)
 	{
 		board = Board.getBoard();
 		mapClass = board.getMap();
@@ -36,6 +36,6 @@ public class BigGift extends Gift implements CellState
 		mapArray[p.getTileX()+dx][p.getTileY()+dy]="g";
 		int Score =p.getScore().getScore()+this.getIncreaseFactor();
 		p.getScore().setScore(Score);
-		p.movePlayer(dx, dy);
+		//p.movePlayer(dx, dy);
 	}
 }

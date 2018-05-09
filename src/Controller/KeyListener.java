@@ -8,12 +8,12 @@ import View.Board;
 
 public class KeyListener extends  KeyAdapter{
 	private Model.Map map ;
-	private Model.Player p;
+	private Model.PlayerInterface p;
 	private String Direction;
 	private Board board;
 	private Cell state;
 	private GameController controller;
-	public KeyListener(Model.Map map,Model.Player p,Board board)
+	public KeyListener(Model.Map map,Model.PlayerInterface p,Board board)
 	{	this.p=p;
 		this.map=map;
 		this.board = board;
@@ -25,31 +25,36 @@ public class KeyListener extends  KeyAdapter{
 		
 	if(keycode==KeyEvent.VK_UP)
 	{  
-		state.setCellState(map.getMap(p.getTileX(), p.getTileY()-1));
-		state.move(0, -1, p);
+		p.movePlayer(state,map.getMap(p.getTileX(), p.getTileY()-1),0, -1);	
+	//	state.setCellState(map.getMap(p.getTileX(), p.getTileY()-1));
+		//state.move(0, -1, p);
 		Direction="up";
+		
 		//if(!map.getMap(p.getTileX(), p.getTileY()-1).equals("w"))
 			//p.move( 0,-1,Direction);
 	}
 	if(keycode==KeyEvent.VK_DOWN)
 	{ 	Direction="down";
 		System.out.println("KEY PRESSED");
-		state.setCellState(map.getMap(p.getTileX(), p.getTileY()+1));	
-		state.move(0, 1, p);
+		p.movePlayer(state,map.getMap(p.getTileX(), p.getTileY()+1),0, 1);	
+		//state.setCellState(map.getMap(p.getTileX(), p.getTileY()+1));	
+		//state.move(0, 1, p);
 		//if(!map.getMap(p.getTileX(), p.getTileY()+1).equals("w"))
 			//p.move( 0, 1,Direction);
 	}
 	if(keycode==KeyEvent.VK_LEFT)
 	{ 	Direction="left";
-		state.setCellState(map.getMap(p.getTileX()-1, p.getTileY()));
-		state.move(-1, 0, p);
+		p.movePlayer(state,map.getMap(p.getTileX()-1, p.getTileY()),-1, 0);	
+		//state.setCellState(map.getMap(p.getTileX()-1, p.getTileY()));
+		//state.move(-1, 0, p);
 		//if(!map.getMap(p.getTileX()-1, p.getTileY()).equals("w"))
 			//p.move( -1, 0,Direction);
 	}
 	if(keycode==KeyEvent.VK_RIGHT)
 	{ 	Direction="right";
-		state.setCellState(map.getMap(p.getTileX()+1, p.getTileY()));
-		state.move(1, 0, p);
+		p.movePlayer(state,map.getMap(p.getTileX()+1, p.getTileY()),1, 0);	
+		//state.setCellState(map.getMap(p.getTileX()+1, p.getTileY()));
+		//state.move(1, 0, p);
 		//if(!map.getMap(p.getTileX()+1, p.getTileY()).equals("w"))
 			//p.move( 1, 0,Direction);
 	}

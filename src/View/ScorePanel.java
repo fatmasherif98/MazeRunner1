@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 import Controller.GameController;
 import Model.Player;
+import Model.PlayerInterface;
 import Model.ScoreClass;
 
 public class ScorePanel extends JPanel implements Observer
@@ -21,7 +22,7 @@ public class ScorePanel extends JPanel implements Observer
 	private JLabel HealthLbl= new JLabel();
 	private Model.ScoreClass score;
 	private GameController viewcontroller;
-	private Player player;
+	private PlayerInterface player;
 	private Board board;
 	private Model.Health health;
 	

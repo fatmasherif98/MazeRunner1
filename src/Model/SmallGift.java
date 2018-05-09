@@ -24,7 +24,7 @@ public class SmallGift extends Gift implements CellState
 	g.drawImage(this.getGiftImage(), x*20, y*20,null);
 	}
 	
-	public void move(int dx, int dy,Player p) {
+	public void move(int dx, int dy,PlayerInterface p) {
 		board = Board.getBoard();
 		mapClass = board.getMap();
 		mapArray = mapClass.getMapArray();
@@ -35,7 +35,7 @@ public class SmallGift extends Gift implements CellState
 		mapArray[p.getTileX()+dx][p.getTileY()+dy]="g";
 	//	System.out.println(" move" +	mapArray[p.getTileX()+dx][p.getTileY()+dy]);
 		//System.out.println("x"+(p.getTileX()+dx)+"y"+(p.getTileY()+dy));
-		p.movePlayer(dx, dy);
+		//p.movePlayer(dx, dy);
 	
 		
 	}

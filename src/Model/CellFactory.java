@@ -19,7 +19,9 @@ public class CellFactory {
 			return new Tree(cell);
 		} else if(cellType.equals("f")) {
 			return new FinishLine(cell);
-		} 
+		} else if(cellType.equals("A")) {
+			return new ArmorCell(cell);
+		}
 		return null;
 	}
 

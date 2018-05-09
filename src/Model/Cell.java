@@ -10,8 +10,8 @@ public class Cell
 	CellState StrongBomb;
 	CellState SmallGift;
 	CellState BigGift;
-	CellState Player;
 	CellState FinishLine;
+	CellState ArmorCell;
 	CellFactory cellFactory = new CellFactory();
 		
 	CellState cellState;
@@ -23,9 +23,8 @@ public class Cell
 		StrongBomb = cellFactory.getCell("B", this);
 		SmallGift = cellFactory.getCell("c", this);
 		BigGift = cellFactory.getCell("C", this);
-		Player = (CellState) new Player(this);
 		FinishLine = cellFactory.getCell("f", this);
-		
+		ArmorCell = cellFactory.getCell("A", this);
 		cellState = Tree;
 	}
 	
@@ -40,7 +39,7 @@ public class Cell
 		cellState.draw( x,y, g);
 	}
 	
-	public void move ( int dx , int dy,Player p)
+	public void move ( int dx , int dy,PlayerInterface p)
 	{
 		cellState.move(dx, dy,p);
 	}
@@ -69,7 +68,9 @@ public void setCellState(String state){
 	else if(state.equals("C"))
 	{
 		cellState = BigGift;
-	}		
+	} else if(state.equals("A")) {
+		cellState = ArmorCell;
+	}
 }
 
 }

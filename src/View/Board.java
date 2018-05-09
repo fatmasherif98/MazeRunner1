@@ -9,6 +9,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -19,6 +20,8 @@ import Model.Cell;
 import Model.Gift;
 import Model.Map;
 import Model.Player;
+import Model.PlayerInterface;
+import Model.PlayerWithArmor;
 import Model.SmallGift;
 import Model.StrongBomb;
 import Model.WeakBomb;
@@ -27,13 +30,23 @@ import Model.WeakBomb;
 public class Board extends JPanel implements ActionListener
 {	private Bomb bomb;
 	private Timer timer;
-	private Player p;
+	private PlayerInterface p;
 	private Gift gift;
 	private static Board boardInstance = null;
 	private Model.Map map;
 	private GameController viewController;
 	private Controller.KeyListener keylistener;
 	private Cell cell;
+	private boolean checkWin = false;
+	
+	public boolean isCheckWin() {
+		return checkWin;
+	}
+
+	public void setCheckWin(boolean checkWin) {
+		this.checkWin = checkWin;
+	}
+
 	public static Board getBoard() {
 		if (boardInstance == null)
 			boardInstance = new Board();
@@ -54,17 +67,17 @@ private Board() {
 	this.viewController = viewController;
 	map=new Model.Map();
 	p=new Player();
-	keylistener=new Controller.KeyListener(map, p,this);
+	keylistener=new Controller.KeyListener(map,p,this);
 	addKeyListener(keylistener);	
 	setFocusable(true);
 	cell = new Cell();
 }
-public Player getP() {
+
+public PlayerInterface getP() {
 	return p;
 }
-
-public void setP(Player p) {
-	this.p = p;
+public void setPlayerArmor() {
+	p= new PlayerWithArmor(p);
 }
 
 /*private Board( GameController viewController) {
@@ -77,10 +90,17 @@ public void setP(Player p) {
 	//repaint();
 //}
 
+public void setP(PlayerInterface p) {
+	keylistener=new Controller.KeyListener(map,p,this);
+	this.p = p;
+}
+
 protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//map.openFile();
 		//map.readFile();
+		if( !checkWin) {
+	
 		for(int y=0; y<30; y++) 
 		{
 			for( int x=0; x<30; x++) 
@@ -89,8 +109,13 @@ protected void paintComponent(Graphics g) {
 				cell.draw(x,y,g);
 			}
 		}
+		
 		g.drawImage(p.getPlayer(), p.getTileX()*20, p.getTileY()*20, null);
 	//	repaint();
+	} else {
+		//JOptionPane.showMessageDialog(null,"You Win");
+	//	Launcher launch = new Launcher();
+	}
 	}
 
 @Override
