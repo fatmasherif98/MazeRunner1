@@ -16,11 +16,17 @@ public class CellFactory {
 		} else if (cellType.equals("w")) {
 			return new Wall(cell);
 		} else if (cellType.equals("g")) {
-			return new Tree(cell);
+			return new Path(cell);
 		} else if(cellType.equals("f")) {
 			return new FinishLine(cell);
 		} else if(cellType.equals("A")) {
 			return new ArmorCell(cell);
+		}
+		else if (cellType.equals("t")){
+			return new TreeWall(cell);
+		}
+		else if (cellType.equals("s")){
+			return new BulletCell(cell);
 		}
 		return null;
 	}

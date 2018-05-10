@@ -43,5 +43,9 @@ public class StrongBomb extends Bomb implements CellState {
 		}
 		//p.movePlayer(dx, dy);
 	}
+	@Override
+	public boolean CanShoot() {
+		return false;
+	}
 	
 }

@@ -7,29 +7,37 @@ import javax.swing.ImageIcon;
 
 public interface PlayerInterface {
 	public String Description();
-	public Image getPlayer();
+
 	public int getTileX();
 
 	public void setTileX(int tileX);
+
 	public int getTileY();
 
 	public void setTileY(int tileY);
 
-	public void setPlayer(Image player) ;
+	public Image getPlayerLeft();
 
+	public Image getPlayerRight();
 
+	public Image getPlayerDown();
 
-public ScoreClass getScore();
+	public Image getPlayerUp();
 
-public void setScore(int score);
+	public void setCurrentPlayer(Image img);
 
-public Health getHealth();
+	public ScoreClass getScore();
 
-public void setHealth(Health health);
+	public Image getCurrent();
+	
+	public void setScore(int score);
 
-public void movePlayer(Cell state, String type, int dx , int dy);
+	public Health getHealth();
 
-public void draw(int x, int y, Graphics g); 
+	public void setHealth(Health health);
 
+	public void movePlayer(Cell state, String type, int dx, int dy);
+
+	public void draw(int x, int y, Graphics g, Image img);
 
 }

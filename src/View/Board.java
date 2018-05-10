@@ -91,8 +91,8 @@ public void setPlayerArmor() {
 //}
 
 public void setP(PlayerInterface p) {
-	keylistener=new Controller.KeyListener(map,p,this);
 	this.p = p;
+    keylistener.setP(p);	
 }
 
 protected void paintComponent(Graphics g) {
@@ -110,7 +110,7 @@ protected void paintComponent(Graphics g) {
 			}
 		}
 		
-		g.drawImage(p.getPlayer(), p.getTileX()*20, p.getTileY()*20, null);
+		g.drawImage(p.getCurrent(), p.getTileX()*20, p.getTileY()*20, null);
 	//	repaint();
 	} else {
 		//JOptionPane.showMessageDialog(null,"You Win");

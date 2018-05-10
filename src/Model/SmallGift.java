@@ -39,5 +39,10 @@ public class SmallGift extends Gift implements CellState
 	
 		
 	}
+	@Override
+	public boolean CanShoot() 
+	{
+		return false;
+	}
 	
 }

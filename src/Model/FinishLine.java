@@ -31,6 +31,10 @@ public class FinishLine implements CellState{
 		board.setCheckWin(true);
 		
 	}
+
+	public boolean CanShoot() {
+		return false;
+	}
 	
 
 	

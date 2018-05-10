@@ -41,7 +41,11 @@ public class WeakBomb extends Bomb implements CellState
 			p=new PlayerWithoutArmor(p);
 			board = Board.getBoard();
 			board.setP(p);
-		}
+			}
 		//p.movePlayer(dx, dy);
+	}
+	@Override
+	public boolean CanShoot() {
+		return true;
 	}
 }

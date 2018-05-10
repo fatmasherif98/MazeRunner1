@@ -4,15 +4,15 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class Tree implements CellState{
+public class Path implements CellState{
 
 	Cell cell;
 	ImageIcon img;
 	Image Treeimg;
 	
-	public Tree( Cell newCell) {
+	public Path( Cell newCell) {
 		cell = newCell;
-		img = new ImageIcon(this.getClass().getResource("/images/icons8-oak-tree-30.png"));
+		img = new ImageIcon(this.getClass().getResource("/images/icons8-square-30.png"));
 		Treeimg = img.getImage();
 	}
 	public void draw(int x, int y, Graphics g) {
@@ -22,5 +22,10 @@ public class Tree implements CellState{
 	public void move(int dx, int dy,PlayerInterface p) {
 		System.out.println("MOVE IN TREE");
 		//p.movePlayer(dx, dy);
+	}
+	@Override
+	public boolean CanShoot() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

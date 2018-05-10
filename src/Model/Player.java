@@ -10,18 +10,37 @@ import View.Board;
 
 public class Player implements  PlayerInterface {	
 	private int TileX,TileY;
-	private Image player;
+	private Image current;
+	private Image PlayerUp;
+	private Image PlayerDown;
+	private Image PlayerLeft;
+	private Image PlayerRight;
 	private ScoreClass score;
 	private Health health;
 	private String PlayerType;
 	private Board board;
+	private int numberOfBullets=6;
 	
+	
+public int getNumberOfBullets() {
+		return numberOfBullets;
+	}
+
+
+	public void setNumberOfBullets(int numberOfBullets) {
+		this.numberOfBullets = numberOfBullets;
+	}
+
+
 public Player() 
 { 	
-	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/icons8-penguin-24.png"));
-	player=img.getImage();
 	TileX=1;
 	TileY=1;
+	PlayerLeft=new ImageIcon(this.getClass().getResource("/images/icons8-black-cat-24.png")).getImage();
+	PlayerRight=new ImageIcon(this.getClass().getResource("/images/cat right position.png")).getImage();
+	PlayerUp=new ImageIcon(this.getClass().getResource("/images/image_cat_up_icon.png")).getImage();
+	PlayerDown=new ImageIcon(this.getClass().getResource("/images/icons8-cat-profile-24.png")).getImage();
+	current=PlayerRight;
 	score=new ScoreClass();
 	health = new Health();
 	PlayerType = "player";
@@ -64,20 +83,35 @@ public void setTileY(int tileY) {
 	TileY = tileY;
 }
 
-public Image getPlayer() {
-	return player;
+public Image getPlayerLeft () {
+	return PlayerLeft;
 }
 
-public void setPlayer(Image player) {
-	this.player = player;
+public Image getPlayerRight() {
+	return PlayerRight;
 }
+
+public Image getPlayerDown() {
+	return PlayerDown;
+}
+
+public Image getPlayerUp() 
+{
+	return PlayerUp;
+}
+
+public void setCurrentPlayer(Image img)
+{
+	this.current=img;
+}
+
 
 public void movePlayer(Cell state,String type,int dx , int dy)
 {   state.setCellState(type);
 	board=Board.getBoard();
 	state.move(dx, dy,board.getP());
 	System.out.println("player moving");
-	if(!type.equals("w"))
+	if((!type.equals("w"))&&(!type.equals("t")))
 	{
 	TileX+=dx;
 	TileY+=dy;
@@ -85,8 +119,8 @@ public void movePlayer(Cell state,String type,int dx , int dy)
 }
 
 
-public void draw(int x, int y, Graphics g) {
-	g.drawImage(player, x*20, y*20,null);
+public void draw(int x, int y, Graphics g,Image img) {
+	g.drawImage(img, x*20, y*20,null);
 }
 
 
@@ -97,8 +131,14 @@ public String Description() {
 }
 
 
+public Image getCurrent() {
+	return current;
+}
 
 
+public void setCurrent(Image current) {
+	this.current = current;
+}
 
 
 }

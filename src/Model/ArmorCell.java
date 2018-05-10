@@ -36,11 +36,15 @@ public class ArmorCell implements CellState {
 	public void move(int dx, int dy, PlayerInterface p) {
 		//PlayerInterface
 		p=new PlayerWithArmor(p);
+		p.setCurrentPlayer(p.getCurrent());
 		board = Board.getBoard();
 		board.setP(p);
-		System.out.println("DESCRIPTION"+p.Description());
 		mapClass = board.getMap();
 		mapArray = mapClass.getMapArray();	
 		mapArray[p.getTileX()+dx][p.getTileY()+dy]="g";
+	}
+	@Override
+	public boolean CanShoot() {
+		return false;
 	}
 }
