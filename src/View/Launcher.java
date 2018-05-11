@@ -2,14 +2,14 @@ package View;
 
 import javax.swing.*;
 
-import Controller.GameController;
+import Controller.EndGame;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
 public class Launcher {
 	private JFrame f;
 
-	private GameController viewController = new GameController();
+
 	public Board board = Board.getBoard();
 	private ScorePanel scorepanel = new ScorePanel();
 

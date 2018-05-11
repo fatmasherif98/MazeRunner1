@@ -1,39 +1,18 @@
 package View;
 
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.Timer;
 
-import Controller.GameController;
-import Model.BigGift;
-import Model.Bomb;
+import Controller.EndGame;
 import Model.Cell;
-import Model.Gift;
-import Model.Map;
 import Model.Player;
 import Model.PlayerInterface;
-import Model.PlayerWithArmor;
-import Model.SmallGift;
-import Model.StrongBomb;
-import Model.WeakBomb;
 
-public class Board extends JPanel implements ActionListener {
-	private Bomb bomb;
-	private Timer timer;
+public class Board extends JPanel {
 	private PlayerInterface p;
-	private Gift gift;
 	private static Board boardInstance = null;
 	private Model.Map map;
-	private GameController viewController;
+	private EndGame endgame;
 	private Controller.KeyListener keylistener;
 	private Cell cell;
 
@@ -54,7 +33,7 @@ public class Board extends JPanel implements ActionListener {
 	private Board() {
 		super();
 		super.setBounds(0, 0, 20 * 30, 20 * 30);
-		this.viewController = new GameController();
+		this.endgame = new EndGame();
 		map = new Model.Map();
 		p = new Player();
 		keylistener = new Controller.KeyListener(map, p, this);
@@ -65,10 +44,6 @@ public class Board extends JPanel implements ActionListener {
 
 	public PlayerInterface getP() {
 		return p;
-	}
-
-	public void setPlayerArmor() {
-		p = new PlayerWithArmor(p);
 	}
 
 	/*
@@ -90,7 +65,7 @@ public class Board extends JPanel implements ActionListener {
 		super.paintComponent(g);
 		// map.openFile();
 		// map.readFile();
-		if (!viewController.CheckLose()) {
+		if (!endgame.CheckLose()&&!endgame.CheckWin()) {
 			for (int y = 0; y < 30; y++) {
 				for (int x = 0; x < 30; x++) {
 					cell.setCellState(map.getMap(x, y));
@@ -102,7 +77,4 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	public void actionPerformed(ActionEvent arg0) {
-
-	}
 }
