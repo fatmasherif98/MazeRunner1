@@ -7,9 +7,9 @@ public abstract class PlayerDecorator implements PlayerInterface{
 		super();
 		this.player1 = player1;
 	}
+	
 	public String Description() {
 		return player1.Description();
 	}
 	
-
 }

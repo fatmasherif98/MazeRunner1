@@ -14,8 +14,7 @@ public class Cell
 	CellState ArmorCell;
 	CellState TreeWall;
 	CellState BulletCell;
-	CellFactory cellFactory = new CellFactory();
-		
+	CellFactory cellFactory = new CellFactory();	
 	CellState cellState;
 	
 	public Cell() {
@@ -35,11 +34,13 @@ public class Cell
 	public int getSize() {
 		return 0;
 	}
+	
 	public boolean canMove() {
-	return true;	
+		return true;	
 	}
  
-	public void draw(int x, int y, Graphics g) {
+	public void draw(int x, int y, Graphics g)
+	{
 		cellState.draw( x,y, g);
 	}
 	

@@ -9,23 +9,23 @@ public class Wall implements CellState {
 	Cell cell;
 	ImageIcon img;
 	Image Wallimg;
-	
+
 	public Wall(Cell newCell) {
 		cell = newCell;
 		img = new ImageIcon(this.getClass().getResource("/images/icons8-brick-wall-30.png"));
 		Wallimg = img.getImage();
 	}
-public void draw(int x, int y, Graphics g) {
-	g.drawImage( Wallimg, x*20, y*20,null);
+
+	public void draw(int x, int y, Graphics g) {
+		g.drawImage(Wallimg, x * 20, y * 20, null);
 	}
 
-public void move(int dx, int dy,PlayerInterface p) 
-{    
-	//p.movePlayer(0, 0);
-}
+	public void move(int dx, int dy, PlayerInterface p) {
+		// p.movePlayer(0, 0);
+	}
 
-public boolean CanShoot() {
-	return false;
-}
+	public boolean CanShoot() {
+		return false;
+	}
 
 }

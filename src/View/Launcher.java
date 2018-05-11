@@ -1,40 +1,38 @@
 package View;
+
 import javax.swing.*;
 
 import Controller.GameController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
-public class Launcher 
-{private JFrame f;
-	public JFrame getF() {
-	return f;
-}
-
-public void setF(JFrame f) {
-	this.f = f;
-}
+public class Launcher {
+	private JFrame f;
 
 	private GameController viewController = new GameController();
 	public Board board = Board.getBoard();
-	private ScorePanel scorepanel=new ScorePanel();
-	
+	private ScorePanel scorepanel = new ScorePanel();
+
 	public static void main(String[] args) {
-	new Launcher();
+		new Launcher();
 	}
-	
-	public Launcher() 
-	{
-		f= new JFrame();
+
+
+	public Launcher() {
+		f = new JFrame();
 		f.setTitle("MazeRunner");
 		f.getContentPane().add(board);
-		f.getContentPane().add(scorepanel);		
-		//viewController.getPlayer().getScore().addObserver(scorepanel);
+		f.getContentPane().add(scorepanel);
+		// viewController.getPlayer().getScore().addObserver(scorepanel);
 		f.getContentPane().setLayout(new BoxLayout(f.getContentPane(), BoxLayout.X_AXIS));
-		f.setSize(800,600);
+		f.setSize(800, 600);
 		f.setLocationRelativeTo(null);
-		//f.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+		f.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);}
-	
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	public JFrame getFrame() {
+		return f;
+	}
 }

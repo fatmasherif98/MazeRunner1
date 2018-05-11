@@ -26,9 +26,8 @@ import Model.SmallGift;
 import Model.StrongBomb;
 import Model.WeakBomb;
 
-
-public class Board extends JPanel implements ActionListener
-{	private Bomb bomb;
+public class Board extends JPanel implements ActionListener {
+	private Bomb bomb;
 	private Timer timer;
 	private PlayerInterface p;
 	private Gift gift;
@@ -37,23 +36,14 @@ public class Board extends JPanel implements ActionListener
 	private GameController viewController;
 	private Controller.KeyListener keylistener;
 	private Cell cell;
-	private boolean checkWin = false;
-	
-	public boolean isCheckWin() {
-		return checkWin;
-	}
-
-	public void setCheckWin(boolean checkWin) {
-		this.checkWin = checkWin;
-	}
 
 	public static Board getBoard() {
 		if (boardInstance == null)
 			boardInstance = new Board();
 		return boardInstance;
 	}
-	
-public Model.Map getMap() {
+
+	public Model.Map getMap() {
 		return map;
 	}
 
@@ -61,66 +51,58 @@ public Model.Map getMap() {
 		this.map = map;
 	}
 
-private Board() {
-	super();
-	super.setBounds(0, 0, 20*30, 20*30);
-	this.viewController = viewController;
-	map=new Model.Map();
-	p=new Player();
-	keylistener=new Controller.KeyListener(map,p,this);
-	addKeyListener(keylistener);	
-	setFocusable(true);
-	cell = new Cell();
-}
+	private Board() {
+		super();
+		super.setBounds(0, 0, 20 * 30, 20 * 30);
+		this.viewController = new GameController();
+		map = new Model.Map();
+		p = new Player();
+		keylistener = new Controller.KeyListener(map, p, this);
+		addKeyListener(keylistener);
+		setFocusable(true);
+		cell = new Cell();
+	}
 
-public PlayerInterface getP() {
-	return p;
-}
-public void setPlayerArmor() {
-	p= new PlayerWithArmor(p);
-}
+	public PlayerInterface getP() {
+		return p;
+	}
 
-/*private Board( GameController viewController) {
-		
-		this.viewController = viewController;
-		timer = new Timer(25, (ActionListener) this);
-		timer.start();
-	}*/
-//public void actionPerformed( ActionEvent e) {
-	//repaint();
-//}
+	public void setPlayerArmor() {
+		p = new PlayerWithArmor(p);
+	}
 
-public void setP(PlayerInterface p) {
-	this.p = p;
-    keylistener.setP(p);	
-}
+	/*
+	 * private Board( GameController viewController) {
+	 * 
+	 * this.viewController = viewController; timer = new Timer(25, (ActionListener)
+	 * this); timer.start(); }
+	 */
+	// public void actionPerformed( ActionEvent e) {
+	// repaint();
+	// }
 
-protected void paintComponent(Graphics g) {
+	public void setP(PlayerInterface p) {
+		this.p = p;
+		keylistener.setP(p);
+	}
+
+	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		//map.openFile();
-		//map.readFile();
-		if( !checkWin) {
-	
-		for(int y=0; y<30; y++) 
-		{
-			for( int x=0; x<30; x++) 
-			{			
-				cell.setCellState(map.getMap(x, y));
-				cell.draw(x,y,g);
+		// map.openFile();
+		// map.readFile();
+		if (!viewController.CheckLose()) {
+			for (int y = 0; y < 30; y++) {
+				for (int x = 0; x < 30; x++) {
+					cell.setCellState(map.getMap(x, y));
+					cell.draw(x, y, g);
+				}
 			}
+			g.drawImage(p.getCurrent(), p.getTileX() * 20, p.getTileY() * 20, null);
+			// repaint();
 		}
-		
-		g.drawImage(p.getCurrent(), p.getTileX()*20, p.getTileY()*20, null);
-	//	repaint();
-	} else {
-		//JOptionPane.showMessageDialog(null,"You Win");
-	//	Launcher launch = new Launcher();
-	}
 	}
 
-@Override
-public void actionPerformed(ActionEvent arg0) {
-	// TODO Auto-generated method stub
-	
-}
+	public void actionPerformed(ActionEvent arg0) {
+
+	}
 }

@@ -18,7 +18,6 @@ public class PlayerWithArmor extends PlayerDecorator {
 	}
 
 	public int getTileX() {
-
 		return player1.getTileX();
 	}
 
