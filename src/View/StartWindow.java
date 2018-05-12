@@ -47,7 +47,7 @@ public class StartWindow extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Launcher launching=new Launcher();
+				Launcher launching=Launcher.getLauncher();
 			}
 		});
 		btnNewButton.setBounds(196, 322, 204, 92);

@@ -72,7 +72,9 @@ public class Board extends JPanel implements Serializable{
 		// map.openFile();
 		// map.readFile();
 		System.out.println("flag");
-		if (!endgame.CheckLose()&&!endgame.CheckWin()) {
+		endgame.CheckLose();
+		endgame.CheckWin();
+		
 			for (int y = 0; y < 30; y++) {
 				for (int x = 0; x < 30; x++) {
 					cell.setCellState(map.getMap(x, y));
@@ -81,7 +83,7 @@ public class Board extends JPanel implements Serializable{
 			}
 			g.drawImage(p.getCurrent(), p.getTileX() * 20, p.getTileY() * 20, null);
 			
-		}
+		
 	}
 
 }

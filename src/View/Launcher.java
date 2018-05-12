@@ -15,12 +15,19 @@ public class Launcher {
 	public Board board = Board.getBoard();
 	private ScorePanel scorepanel = ScorePanel.getScorePanel();
 
+	private static Launcher launching = null;
+	public static Launcher getLauncher() {
+		if (launching == null)
+			launching = new Launcher();
+		return launching;
+	}
+	
 	public static void main(String[] args) {
 		new Launcher();
 	}
 
 
-	public Launcher() {
+	private Launcher() {
 		f = new JFrame();
 		f.setTitle("MazeRunner");
 		scorepanel.setBounds(0,602,602,148);
