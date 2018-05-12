@@ -1,4 +1,4 @@
-wwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+wwwwwwwwwBwwwwwwwwwwwwwwwwwwww
 wgggggAgggggggtggggggggggggggw
 wggggwwwwwwwwwwwwwwwwwwwwwwwgw
 wBggwggggggggwggggwggggggggwgw
@@ -27,8 +27,4 @@ wgwgwwwwwwwwwwwwwtwgggwgggwggw
 wgwgwgcggggCggggggwgggwgggwggw
 wgwgwwwwwwwwwwwwwwwwwwwgggwggw
 wgwgggggggggggggggggggggggwggw
-<<<<<<< HEAD
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwfw
-=======
-wwwwwwwwwwwwwwwwwwwwwwwwwwwwfw
->>>>>>> origin/Shooting-Branch

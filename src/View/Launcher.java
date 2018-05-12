@@ -13,7 +13,7 @@ public class Launcher {
 
 
 	public Board board = Board.getBoard();
-	private ScorePanel scorepanel = new ScorePanel();
+	private ScorePanel scorepanel = ScorePanel.getScorePanel();
 
 	public static void main(String[] args) {
 		new Launcher();

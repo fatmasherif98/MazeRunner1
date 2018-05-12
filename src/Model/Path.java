@@ -23,9 +23,5 @@ public class Path implements CellState{
 		System.out.println("MOVE IN TREE");
 		//p.movePlayer(dx, dy);
 	}
-	@Override
-	public boolean CanShoot() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
 }

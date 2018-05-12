@@ -39,8 +39,5 @@ public class BigGift extends Gift implements CellState
 		//p.movePlayer(dx, dy);
 	}
 
-	@Override
-	public boolean CanShoot() {
-		return false;
-	}
+
 }

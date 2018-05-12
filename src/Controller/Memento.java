@@ -14,7 +14,6 @@ public class Memento {
 	}
 
 
-
 	public PlayerInterface getState(){
 	      return player;
 	   }	

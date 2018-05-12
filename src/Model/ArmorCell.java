@@ -32,7 +32,7 @@ public class ArmorCell implements CellState {
 	g.drawImage(this.getArmorImage(), x*20, y*20,null);
 	}
 
-	@Override
+	
 	public void move(int dx, int dy, PlayerInterface p) {
 		//PlayerInterface
 		p=new PlayerWithArmor(p);
@@ -42,9 +42,5 @@ public class ArmorCell implements CellState {
 		mapClass = board.getMap();
 		mapArray = mapClass.getMapArray();	
 		mapArray[p.getTileX()+dx][p.getTileY()+dy]="g";
-	}
-	@Override
-	public boolean CanShoot() {
-		return false;
 	}
 }

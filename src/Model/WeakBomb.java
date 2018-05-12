@@ -44,8 +44,5 @@ public class WeakBomb extends Bomb implements CellState
 			}
 		//p.movePlayer(dx, dy);
 	}
-	@Override
-	public boolean CanShoot() {
-		return true;
-	}
+	
 }

@@ -71,7 +71,7 @@ public class Board extends JPanel implements Serializable{
 		super.paintComponent(g);
 		// map.openFile();
 		// map.readFile();
-		
+		System.out.println("flag");
 		if (!endgame.CheckLose()&&!endgame.CheckWin()) {
 			for (int y = 0; y < 30; y++) {
 				for (int x = 0; x < 30; x++) {

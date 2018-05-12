@@ -13,7 +13,7 @@ public class AL implements ActionListener{
 	private Load loader = new Load();
 	private Board board;
 	
-	@Override
+	
 	public void actionPerformed(ActionEvent e) {
 		board = Board.getBoard();
 		if( e.getActionCommand().equalsIgnoreCase("save")) {
