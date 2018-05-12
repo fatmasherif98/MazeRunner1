@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import Model.PlayerInterface;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class ScorePanel extends JPanel implements Observer {
 	private JLabel Score;
@@ -17,10 +18,13 @@ public class ScorePanel extends JPanel implements Observer {
 	private PlayerInterface player;
 	private Board board;
 	private Model.Health health;
+	private JLabel lblTime;
+	private JLabel label_2;
 
 	public ScorePanel()
 
-	{
+	{	//super.setSize(50, 10);
+		//super.setBounds(0,0,50,50);
 		board = Board.getBoard();
 		player = board.getP();
 		score = player.getScore();
@@ -50,10 +54,27 @@ public class ScorePanel extends JPanel implements Observer {
 		this.add(Health);
 		// this.add(Time);
 		// this.setBounds(600, 0, 400, 400);
-		this.setBackground(new Color(204, 255, 255));
+		this.setBackground(Color.WHITE);
 		add(ScoreLbl);
 		// ScoreLbl.setText("HI");
 		add(HealthLbl);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/AS0w.gif")));
+		lblNewLabel.setBounds(428, 297, 364, 315);
+		add(lblNewLabel);
+		
+		lblTime = new JLabel();
+		lblTime.setText("Time :");
+		lblTime.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblTime.setBounds(15, 280, 354, 31);
+		add(lblTime);
+		
+		label_2 = new JLabel();
+		label_2.setText("0");
+		label_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		label_2.setBounds(70, 280, 299, 31);
+		add(label_2);
 	}
 
 	public void update(Observable observable, Object change) {

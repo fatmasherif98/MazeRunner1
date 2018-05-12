@@ -25,9 +25,10 @@ public class Launcher {
 		f.getContentPane().add(scorepanel);
 		// viewController.getPlayer().getScore().addObserver(scorepanel);
 		f.getContentPane().setLayout(new BoxLayout(f.getContentPane(), BoxLayout.X_AXIS));
-		f.setSize(800, 600);
+		f.setSize(1220, 640);
 		f.setLocationRelativeTo(null);
-		f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		f.setResizable(false);
+		//f.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

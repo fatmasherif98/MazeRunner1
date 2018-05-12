@@ -21,7 +21,7 @@ public class ArmorCell implements CellState {
 	private  Model.Map mapClass;
     private Board board;
 	private String[][] mapArray;
-	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/icons8-defense-16.png"));
+	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/shield 20.png"));
 	public ArmorCell(Cell newCell)
 	{
 		setArmorImage(img.getImage());
