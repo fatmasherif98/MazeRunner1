@@ -9,11 +9,26 @@ public class BulletCell implements CellState {
 	Cell cell;
 	ImageIcon img;
 	Image Bulletimg;
+	private int numberOfBullets=6;
+	
+	
+	public int getNumberOfBullets() {
+			return numberOfBullets;
+		}
+
+
+		public void setNumberOfBullets(int numberOfBullets) {
+			this.numberOfBullets = numberOfBullets;
+		}
+
+
+	
 
 	public BulletCell(Cell newCell) {
 		cell = newCell;
 		img = new ImageIcon(this.getClass().getResource("/images/icons8-fire-30.png"));
 		Bulletimg = img.getImage();
+		
 	}
 
 	public void draw(int x, int y, Graphics g) {
@@ -27,5 +42,6 @@ public class BulletCell implements CellState {
 	public boolean CanShoot() {
 		return false;
 	}
+
 
 }

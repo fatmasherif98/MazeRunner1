@@ -12,7 +12,7 @@ public class BigGift extends Gift implements CellState
 {
 
 	Cell cell;
-	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/icons8-gift-16 (1).png"));
+	ImageIcon img= new ImageIcon(this.getClass().getResource("/images/icons8-gift-24 (1).png"));
 	private Board board;
 	private Model.Map mapClass;
 	private String[][] mapArray;

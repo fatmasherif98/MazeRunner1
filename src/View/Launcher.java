@@ -5,6 +5,8 @@ import javax.swing.*;
 import Controller.EndGame;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Launcher {
 	private JFrame f;
@@ -21,13 +23,18 @@ public class Launcher {
 	public Launcher() {
 		f = new JFrame();
 		f.setTitle("MazeRunner");
+		scorepanel.setBounds(0,602,602,148);
 		f.getContentPane().add(board);
+		f.getContentPane().setLayout(null);
+		f.getContentPane().setLayout(null);
 		f.getContentPane().add(scorepanel);
-		// viewController.getPlayer().getScore().addObserver(scorepanel);
-		f.getContentPane().setLayout(new BoxLayout(f.getContentPane(), BoxLayout.X_AXIS));
-		f.setSize(800, 600);
+
+		
+		f.setBounds(0, 0, 607, 800);
+		f.setSize(605,1000);
 		f.setLocationRelativeTo(null);
-		f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		f.setResizable(false);
+		//f.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

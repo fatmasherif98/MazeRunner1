@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Observable;
 
-public class Health extends Observable
+public class Health extends Observable implements Serializable
 {
 	
 private int Health;

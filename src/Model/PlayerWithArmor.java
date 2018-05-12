@@ -2,11 +2,20 @@ package Model;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 
-public class PlayerWithArmor extends PlayerDecorator {
+public class PlayerWithArmor extends PlayerDecorator implements Serializable {
 	private PlayerInterface player1;
+	
+	public String[][] getMapArray() {
+		return player1.getMapArray();
+	}
+
+	public void setMapArray(String[][] mapArray) {
+		player1.setMapArray(mapArray);
+	}
 
 	public PlayerWithArmor(PlayerInterface player1) {
 		super(player1);
@@ -23,7 +32,7 @@ public class PlayerWithArmor extends PlayerDecorator {
 
 	public void setTileX(int tileX) {
 
-		this.setTileX(tileX);
+		player1.setTileX(tileX);
 
 	}
 
@@ -34,7 +43,7 @@ public class PlayerWithArmor extends PlayerDecorator {
 
 	public void setTileY(int tileY) {
 
-		this.setTileY(tileY);
+		player1.setTileY(tileY);
 	}
 
 	public ScoreClass getScore() {
@@ -43,7 +52,7 @@ public class PlayerWithArmor extends PlayerDecorator {
 
 	public void setScore(int score) {
 
-		this.setScore(score);
+		player1.setScore(score);
 
 	}
 
@@ -54,7 +63,7 @@ public class PlayerWithArmor extends PlayerDecorator {
 
 	public void setHealth(Health health) {
 
-		this.setHealth(health);
+		player1.setHealth(health);
 	}
 
 	public void movePlayer(Cell state, String type, int dx, int dy) {
@@ -87,5 +96,17 @@ public class PlayerWithArmor extends PlayerDecorator {
 
 	public Image getCurrent() {
 		return player1.getCurrent();
+	}
+
+	@Override
+	public int getNumberOfBullets() {
+		return player1.getNumberOfBullets();
+	}
+
+	@Override
+	public void setNumberOfBullets(int numberOfBullets) {
+		player1.setNumberOfBullets(numberOfBullets);
+		
+
 	}
 }

@@ -56,11 +56,10 @@ public class KeyListener extends KeyAdapter {
 			p.setCurrentPlayer(p.getPlayerRight());
 			p.movePlayer(state, map.getMap(p.getTileX() + 1, p.getTileY()), 1, 0);
 		}
-		if(keycode==KeyEvent.VK_SPACE)
-		{ System.out.println("Space Pressed");
-		 	shootClass.shoot(Direction, maximum);
+		if(keycode==KeyEvent.VK_SPACE) 
+		{
+			shootClass.shoot(Direction, maximum);
 		}
-
 		board.repaint();
 	}
 }

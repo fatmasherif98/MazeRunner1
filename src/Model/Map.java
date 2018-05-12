@@ -2,11 +2,12 @@ package Model;
 
 import java.awt.Image;
 import java.io.File;
+import java.io.Serializable;
 import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 
-public class Map {
+public class Map implements Serializable {
 	private Scanner scan;
 	private String Map[] = new String[30];
 	private String MapArray[][] = new String[30][30];

@@ -2,13 +2,14 @@ package Model;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.Serializable;
 import java.util.Observable;
 
 import javax.swing.ImageIcon;
 
 import View.Board;
 
-public class Player implements  PlayerInterface {	
+public class Player implements  PlayerInterface, Serializable {	
 	private int TileX,TileY;
 	private Image current;
 	private Image PlayerUp;
@@ -19,9 +20,22 @@ public class Player implements  PlayerInterface {
 	private Health health;
 	private String PlayerType;
 	private Board board;
+
 	private int numberOfBullets=6;
+	private String MapArray[][];
 	
 	
+	
+public String[][] getMapArray() {
+		return MapArray;
+	}
+
+
+	public void setMapArray(String[][] mapArray) {
+		MapArray = mapArray;
+	}
+
+
 public int getNumberOfBullets() {
 		return numberOfBullets;
 	}
@@ -30,7 +44,6 @@ public int getNumberOfBullets() {
 	public void setNumberOfBullets(int numberOfBullets) {
 		this.numberOfBullets = numberOfBullets;
 	}
-
 
 public Player() 
 { 	
@@ -63,8 +76,7 @@ public Health getHealth() {
 
 public void setHealth(Health health) {
 	this.health = health;
-	//setChanged();
-    //notifyObservers(health);
+	
 }
 
 public int getTileX() {
@@ -104,6 +116,7 @@ public void setCurrentPlayer(Image img)
 {
 	this.current=img;
 }
+
 
 
 public void movePlayer(Cell state,String type,int dx , int dy)
