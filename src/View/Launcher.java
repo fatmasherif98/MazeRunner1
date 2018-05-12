@@ -21,11 +21,12 @@ public class Launcher {
 	public Launcher() {
 		f = new JFrame();
 		f.setTitle("MazeRunner");
+		scorepanel.setBounds(0,595,628,120);
 		f.getContentPane().add(board);
+		f.getContentPane().setLayout(null);
 		f.getContentPane().add(scorepanel);
-		// viewController.getPlayer().getScore().addObserver(scorepanel);
-		f.getContentPane().setLayout(new BoxLayout(f.getContentPane(), BoxLayout.X_AXIS));
-		f.setSize(1220, 640);
+		f.setSize(708, 788);
+		f.setBounds(0, 0, 607, 800);
 		f.setLocationRelativeTo(null);
 		f.setResizable(false);
 		//f.setExtendedState(JFrame.MAXIMIZED_BOTH);

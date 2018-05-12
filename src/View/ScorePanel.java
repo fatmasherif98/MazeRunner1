@@ -3,8 +3,12 @@ package View;
 import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Timer;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+
 import Model.PlayerInterface;
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -20,7 +24,11 @@ public class ScorePanel extends JPanel implements Observer {
 	private Model.Health health;
 	private JLabel lblTime;
 	private JLabel label_2;
-
+	/*private final ClockListener clock = new ClockListener();
+    private final Timer timer = new Timer(53, clock);
+    private final JTextField tf = new JTextField(9);
+    private final SimpleDateFormat date = new SimpleDateFormat("mm.ss.SSS");
+    private long startTime;*/
 	public ScorePanel()
 
 	{	//super.setSize(50, 10);
@@ -37,14 +45,14 @@ public class ScorePanel extends JPanel implements Observer {
 		HealthLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
 		Score = new JLabel();
 		Score.setFont(new Font("Tahoma", Font.BOLD, 15));
-		Score.setBounds(10, 97, 354, 31);
+		Score.setBounds(0, 11, 354, 31);
 		Health = new JLabel();
 		Health.setFont(new Font("Tahoma", Font.BOLD, 15));
-		Health.setBounds(10, 213, 430, 34);
+		Health.setBounds(0, 38, 430, 34);
 		Health.setText("Health:");
 		setLayout(null);
-		ScoreLbl.setBounds(65, 97, 299, 31);
-		HealthLbl.setBounds(70, 213, 375, 34);
+		ScoreLbl.setBounds(55, 11, 299, 31);
+		HealthLbl.setBounds(65, 38, 375, 34);
 		int score = player.getScore().getScore();
 		int health = player.getHealth().getHealth();
 		ScoreLbl.setText(String.valueOf(score));
@@ -59,21 +67,16 @@ public class ScorePanel extends JPanel implements Observer {
 		// ScoreLbl.setText("HI");
 		add(HealthLbl);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/AS0w.gif")));
-		lblNewLabel.setBounds(428, 297, 364, 315);
-		add(lblNewLabel);
-		
 		lblTime = new JLabel();
 		lblTime.setText("Time :");
 		lblTime.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblTime.setBounds(15, 280, 354, 31);
+		lblTime.setBounds(0, 70, 354, 31);
 		add(lblTime);
 		
 		label_2 = new JLabel();
 		label_2.setText("0");
 		label_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-		label_2.setBounds(70, 280, 299, 31);
+		label_2.setBounds(55, 70, 299, 31);
 		add(label_2);
 	}
 
