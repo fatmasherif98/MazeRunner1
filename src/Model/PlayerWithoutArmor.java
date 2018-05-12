@@ -117,20 +117,12 @@ public class PlayerWithoutArmor extends PlayerDecorator implements Serializable 
 		return player1.getCurrent();
 	}
 
-	@Override
+
 	public int getNumberOfBullets() {
-<<<<<<< HEAD
 		return player1.getNumberOfBullets();
 	}
 
-	@Override
 	public void setNumberOfBullets(int numberOfBullets) {
-		
 		player1.setNumberOfBullets(numberOfBullets);
-		
-=======
-		// TODO Auto-generated method stub
-		return 0;
->>>>>>> origin/Shooting-Branch
 	}
 }

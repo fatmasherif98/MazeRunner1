@@ -100,8 +100,6 @@ public class PlayerWithArmor extends PlayerDecorator implements Serializable {
 
 	@Override
 	public int getNumberOfBullets() {
-		// TODO Auto-generated method stub
-<<<<<<< HEAD
 		return player1.getNumberOfBullets();
 	}
 
@@ -109,8 +107,6 @@ public class PlayerWithArmor extends PlayerDecorator implements Serializable {
 	public void setNumberOfBullets(int numberOfBullets) {
 		player1.setNumberOfBullets(numberOfBullets);
 		
-=======
-		return 0;
->>>>>>> origin/Shooting-Branch
+
 	}
 }
