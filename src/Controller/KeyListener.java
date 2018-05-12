@@ -36,28 +36,28 @@ public class KeyListener extends KeyAdapter {
 		ScorePanel scorepanel = ScorePanel.getScorePanel();
 		int keycode = e.getKeyCode();
 		if (keycode == KeyEvent.VK_UP&&!scorepanel.isPaused()) {
-			shootClass.returnPath(Direction,maximum);
+			shootClass.returnPath();
 			System.out.println("IS PAUSED ?"+scorepanel.isPaused());
 			Direction="up";
 			maximum =0;
 			p.setCurrentPlayer(p.getPlayerUp());
 			p.movePlayer(state, map.getMap(p.getTileX(), p.getTileY() - 1), 0, -1);		}
 		if (keycode == KeyEvent.VK_DOWN&&!scorepanel.isPaused()) {
-			shootClass.returnPath(Direction,maximum);
+			shootClass.returnPath();
 			Direction="down";
 			maximum =30;
 			p.setCurrentPlayer(p.getPlayerDown());
 			p.movePlayer(state, map.getMap(p.getTileX(), p.getTileY() + 1), 0, 1);
 		}
 		if (keycode == KeyEvent.VK_LEFT&&!scorepanel.isPaused()) {
-			shootClass.returnPath(Direction,maximum);
+			shootClass.returnPath();
 			Direction="left";
 			maximum = 0;
 			p.setCurrentPlayer(p.getPlayerLeft());
 			p.movePlayer(state, map.getMap(p.getTileX() - 1, p.getTileY()), -1, 0);
 		}
 		if (keycode == KeyEvent.VK_RIGHT&&!scorepanel.isPaused()) {
-			shootClass.returnPath(Direction,maximum);
+			shootClass.returnPath();
 			Direction="right";
 			maximum = 30;
 			p.setCurrentPlayer(p.getPlayerRight());
