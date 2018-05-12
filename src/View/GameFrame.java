@@ -8,35 +8,29 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Launcher {
+public class GameFrame {
 	private JFrame f;
 
 
 	public Board board = Board.getBoard();
 	private ScorePanel scorepanel = ScorePanel.getScorePanel();
 
-	private static Launcher launching = null;
-	public static Launcher getLauncher() {
-		if (launching == null)
-			launching = new Launcher();
-		return launching;
+	private static GameFrame gameframe = null;
+	public static GameFrame getGame() {
+		if (gameframe == null)
+			gameframe = new GameFrame();
+		return gameframe;
 	}
 	
-	public static void main(String[] args) {
-		new Launcher();
-	}
 
-
-	private Launcher() {
+	private GameFrame() {
 		f = new JFrame();
 		f.setTitle("MazeRunner");
 		scorepanel.setBounds(0,602,602,148);
 		f.getContentPane().add(board);
 		f.getContentPane().setLayout(null);
 		f.getContentPane().setLayout(null);
-		f.getContentPane().add(scorepanel);
-
-		
+		f.getContentPane().add(scorepanel);	
 		f.setBounds(0, 0, 607, 800);
 		f.setSize(605,1000);
 		f.setLocationRelativeTo(null);

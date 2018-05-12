@@ -2,7 +2,7 @@ package Controller;
 
 import Model.PlayerInterface;
 import View.Board;
-import View.Launcher;
+import View.GameFrame;
 import View.LoseWindow;
 import View.ScorePanel;
 import View.WinWindow;
@@ -18,8 +18,8 @@ public class EndGame {
 
 	public void CheckWin() {
 		if (isWin == true) {
-			Launcher launch=Launcher.getLauncher();
-			launch.getFrame().dispose();
+			GameFrame game=GameFrame.getGame();
+			game.getFrame().dispose();
 			System.out.println("USER WON  ");
 			WinWindow.ShowWinMessage();
 		}
@@ -28,11 +28,10 @@ public class EndGame {
 	public void CheckLose() {
 		board = Board.getBoard();
 		player1 = board.getP();
-
 		if (player1.getHealth().getHealth() < 1) {
 			// LoseWindow lose =new LoseWindow();
-			Launcher launch=Launcher.getLauncher();
-			launch.getFrame().dispose();
+			GameFrame game=GameFrame.getGame();
+			game.getFrame().dispose();
 			LoseWindow.ShowLoseMessage();
 			// launcher=new Launcher(1);
 			// JOptionPane.showMessageDialog(null, "YOU LOSE", "GAME OVER !", 2);
