@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Observable;
 
-public class ScoreClass extends Observable
+public class ScoreClass extends Observable implements Serializable
 {
 	private int Score;
 	
