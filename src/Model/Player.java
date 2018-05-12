@@ -111,7 +111,7 @@ public class Player implements PlayerInterface, Serializable {
 	public void movePlayer(Cell state, String type, int dx, int dy) {
 		state.setCellState(type);
 		board = Board.getBoard();
-		state.move(dx, dy, board.getP());
+		state.ifReached(dx, dy, board.getP());
 		System.out.println("player moving");
 		if ((!type.equals("w")) && (!type.equals("t"))) {
 			TileX += dx;

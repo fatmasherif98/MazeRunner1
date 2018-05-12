@@ -20,9 +20,9 @@ public void draw(int x, int y, Graphics g) {
 	g.drawImage(Treeimg, x*20, y*20,null);
 	}
 
-public void move(int dx, int dy,PlayerInterface p) 
+public void ifReached(int dx, int dy,PlayerInterface p) 
 {    
-	//p.movePlayer(0, 0);
+	//do nothing
 }
 
 public boolean CanShoot() {

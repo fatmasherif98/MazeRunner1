@@ -35,8 +35,9 @@ public class BulletCell implements CellState {
 		g.drawImage(Bulletimg, x * 20, y * 20, null);
 	}
 
-	public void move(int dx, int dy, PlayerInterface p) {
-	
+	public void ifReached(int dx, int dy, PlayerInterface p) 
+	{
+	//do nothing 
 	}
 
 	public boolean CanShoot() {

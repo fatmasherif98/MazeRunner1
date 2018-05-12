@@ -44,9 +44,9 @@ public class Cell
 		cellState.draw( x,y, g);
 	}
 	
-	public void move ( int dx , int dy,PlayerInterface p)
+	public void ifReached ( int dx , int dy,PlayerInterface p)
 	{
-		cellState.move(dx, dy,p);
+		cellState.ifReached(dx, dy,p);
 	}
 	
 public void setCellState(String state){

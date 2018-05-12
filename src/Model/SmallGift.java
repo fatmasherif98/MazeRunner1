@@ -24,7 +24,7 @@ public class SmallGift extends Gift implements CellState
 	g.drawImage(this.getGiftImage(), x*20, y*20,null);
 	}
 	
-	public void move(int dx, int dy,PlayerInterface p) {
+	public void ifReached(int dx, int dy,PlayerInterface p) {
 		board = Board.getBoard();
 		mapClass = board.getMap();
 		mapArray = mapClass.getMapArray();

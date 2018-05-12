@@ -20,8 +20,8 @@ public class Wall implements CellState {
 		g.drawImage(Wallimg, x * 20, y * 20, null);
 	}
 
-	public void move(int dx, int dy, PlayerInterface p) {
-		// p.movePlayer(0, 0);
+	public void ifReached(int dx, int dy, PlayerInterface p) {
+		// do nothing
 	}
 
 	public boolean CanShoot() {

@@ -28,7 +28,7 @@ public class WeakBomb extends Bomb implements CellState
 	g.drawImage( this.getImage(), x*20, y*20,null);
 	}
 
-	public void move(int dx, int dy,PlayerInterface p) {
+	public void ifReached(int dx, int dy,PlayerInterface p) {
 		board = Board.getBoard();
 		mapClass = board.getMap();
 		mapArray = mapClass.getMapArray();
@@ -42,7 +42,6 @@ public class WeakBomb extends Bomb implements CellState
 			board = Board.getBoard();
 			board.setP(p);
 			}
-		//p.movePlayer(dx, dy);
 	}
 	
 }

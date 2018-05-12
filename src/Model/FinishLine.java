@@ -25,7 +25,7 @@ public class FinishLine implements CellState{
 		g.drawImage(Finishimg, x*20, y*20,null);
 	}
 	
-	public void move(int dx, int dy,PlayerInterface p) 
+	public void ifReached(int dx, int dy,PlayerInterface p) 
 	{	endgame.SetWin(true);
 		//p.movePlayer(0, 0);
 		//board = Board.getBoard();

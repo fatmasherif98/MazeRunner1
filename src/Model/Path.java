@@ -19,7 +19,7 @@ public class Path implements CellState{
 	g.drawImage(Treeimg, x*20, y*20,null);
 	}
 	
-	public void move(int dx, int dy,PlayerInterface p) {
+	public void ifReached(int dx, int dy,PlayerInterface p) {
 		System.out.println("MOVE IN TREE");
 		//p.movePlayer(dx, dy);
 	}

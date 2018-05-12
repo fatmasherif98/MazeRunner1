@@ -33,7 +33,7 @@ public class ArmorCell implements CellState {
 	}
 
 	
-	public void move(int dx, int dy, PlayerInterface p) {
+	public void ifReached(int dx, int dy, PlayerInterface p) {
 		//PlayerInterface
 		p=new PlayerWithArmor(p);
 		p.setCurrentPlayer(p.getCurrent());
