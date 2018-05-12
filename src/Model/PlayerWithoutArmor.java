@@ -119,6 +119,7 @@ public class PlayerWithoutArmor extends PlayerDecorator implements Serializable 
 
 	@Override
 	public int getNumberOfBullets() {
+<<<<<<< HEAD
 		return player1.getNumberOfBullets();
 	}
 
@@ -127,5 +128,9 @@ public class PlayerWithoutArmor extends PlayerDecorator implements Serializable 
 		
 		player1.setNumberOfBullets(numberOfBullets);
 		
+=======
+		// TODO Auto-generated method stub
+		return 0;
+>>>>>>> origin/Shooting-Branch
 	}
 }

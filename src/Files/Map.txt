@@ -27,4 +27,8 @@ wgwgwwwwwwwwwwwwwtwgggwgggwggw
 wgwgwgcggggCggggggwgggwgggwggw
 wgwgwwwwwwwwwwwwwwwwwwwgggwggw
 wgwgggggggggggggggggggggggwggw
+<<<<<<< HEAD
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwfw
+=======
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwfw
+>>>>>>> origin/Shooting-Branch

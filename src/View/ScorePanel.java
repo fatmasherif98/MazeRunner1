@@ -1,6 +1,7 @@
 package View;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;
@@ -31,12 +32,15 @@ import java.awt.event.FocusEvent;
 public class ScorePanel extends JPanel implements Observer {
 	private JLabel Score;
 	private JLabel Health;
+	private JLabel Bullets;
 	private JLabel ScoreLbl = new JLabel();
 	private JLabel HealthLbl = new JLabel();
+	private JLabel BulletsLbl= new JLabel ();
 	private Model.ScoreClass score;
 	private PlayerInterface player;
 	private Board board;
 	private Model.Health health;
+<<<<<<< HEAD
 	private JLabel lblTime;
 	private JLabel label_2;
 	/*private final ClockListener clock = new ClockListener();
@@ -50,6 +54,9 @@ public class ScorePanel extends JPanel implements Observer {
 	private Load loader = new Load();
 	
 
+=======
+// private int bulletcell; 
+>>>>>>> origin/Shooting-Branch
 	public ScorePanel()
 
 	{	//super.setSize(50, 10);
@@ -58,6 +65,7 @@ public class ScorePanel extends JPanel implements Observer {
 		player = board.getP();
 		score = player.getScore();
 		health = player.getHealth();
+//	bulletcell=player.getNumberOfBullets();
 		health.addObserver(this);
 		score.addObserver(this);
 		ScoreLbl = new JLabel();
@@ -67,31 +75,55 @@ public class ScorePanel extends JPanel implements Observer {
 		btnLoad.setFocusable(false);
 		btnLoad.addActionListener(al);
 		ScoreLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
+	
+		//BulletsLbl = new JLabel();
+		//BulletsLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
+	
 		HealthLbl = new JLabel();
 		HealthLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
 		Score = new JLabel();
 		Score.setFont(new Font("Tahoma", Font.BOLD, 15));
+<<<<<<< HEAD
 		Score.setBounds(0, 11, 53, 31);
 		Health = new JLabel();
 		Health.setFont(new Font("Tahoma", Font.BOLD, 15));
 		Health.setBounds(0, 38, 61, 34);
+=======
+		Score.setBounds(10, 97, 354, 31);
+		
+		//Bullets.setFont(new Font("Tahoma", Font.BOLD, 15));
+		//Bullets.setBounds(10, 97, 354, 31);
+		
+		Health = new JLabel();
+		Health.setFont(new Font("Tahoma", Font.BOLD, 15));
+		
+		Health.setBounds(10, 213, 430, 34);
+>>>>>>> origin/Shooting-Branch
 		Health.setText("Health:");
+		//Bullets.setBounds(10, 213, 430, 34);
+		//Bullets.setText("Health:");
+		
 		setLayout(null);
 		ScoreLbl.setBounds(55, 11, 33, 31);
 		HealthLbl.setBounds(65, 38, 375, 34);
 		int score = player.getScore().getScore();
 		int health = player.getHealth().getHealth();
+		//int Bullets=player.getNumberOfBullets();
 		ScoreLbl.setText(String.valueOf(score));
 		HealthLbl.setText(String.valueOf(health));
+	//	BulletsLbl.setText(String.valueOf(Bullets));
 		Score.setText("Score:");
+		
 		this.add(Score);
 		this.add(Health);
+		//this.add(Bullets);
 		// this.add(Time);
 		// this.setBounds(600, 0, 400, 400);
 		this.setBackground(Color.WHITE);
 		add(ScoreLbl);
 		// ScoreLbl.setText("HI");
 		add(HealthLbl);
+<<<<<<< HEAD
 
 		
 		lblTime = new JLabel();
@@ -110,6 +142,9 @@ public class ScorePanel extends JPanel implements Observer {
 		btnSave.setBounds(338, 17, 89, 23);
 		this.add(btnSave);
 		this.add(btnLoad);
+=======
+		//add(BulletsLbl);
+>>>>>>> origin/Shooting-Branch
 	}
 
 	public void update(Observable observable, Object change) {

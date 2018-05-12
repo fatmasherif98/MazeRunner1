@@ -46,7 +46,10 @@ public interface PlayerInterface {
 	public void draw(int x, int y, Graphics g, Image img);
 	
 	public int getNumberOfBullets();
+<<<<<<< HEAD
 
     public void setNumberOfBullets(int numberOfBullets);
+=======
+>>>>>>> origin/Shooting-Branch
 
 }
