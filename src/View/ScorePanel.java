@@ -3,7 +3,6 @@ package View;
 import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
-<<<<<<< HEAD
 import java.util.Timer;
 
 import javax.swing.JLabel;
@@ -13,7 +12,6 @@ import javax.swing.JPanel;
 import Model.PlayerInterface;
 import java.awt.Font;
 import javax.swing.ImageIcon;
-=======
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -29,7 +27,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
->>>>>>> memento
 
 public class ScorePanel extends JPanel implements Observer {
 	private JLabel Score;
@@ -40,7 +37,6 @@ public class ScorePanel extends JPanel implements Observer {
 	private PlayerInterface player;
 	private Board board;
 	private Model.Health health;
-<<<<<<< HEAD
 	private JLabel lblTime;
 	private JLabel label_2;
 	/*private final ClockListener clock = new ClockListener();
@@ -48,14 +44,12 @@ public class ScorePanel extends JPanel implements Observer {
     private final JTextField tf = new JTextField(9);
     private final SimpleDateFormat date = new SimpleDateFormat("mm.ss.SSS");
     private long startTime;*/
-=======
 	private JButton btnSave;
 	private JButton btnLoad;
 	private AL al = new AL();
 	private Load loader = new Load();
 	
 
->>>>>>> memento
 	public ScorePanel()
 
 	{	//super.setSize(50, 10);
@@ -77,13 +71,13 @@ public class ScorePanel extends JPanel implements Observer {
 		HealthLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
 		Score = new JLabel();
 		Score.setFont(new Font("Tahoma", Font.BOLD, 15));
-		Score.setBounds(0, 11, 354, 31);
+		Score.setBounds(0, 11, 53, 31);
 		Health = new JLabel();
 		Health.setFont(new Font("Tahoma", Font.BOLD, 15));
-		Health.setBounds(0, 38, 430, 34);
+		Health.setBounds(0, 38, 61, 34);
 		Health.setText("Health:");
 		setLayout(null);
-		ScoreLbl.setBounds(55, 11, 299, 31);
+		ScoreLbl.setBounds(55, 11, 33, 31);
 		HealthLbl.setBounds(65, 38, 375, 34);
 		int score = player.getScore().getScore();
 		int health = player.getHealth().getHealth();
@@ -98,26 +92,24 @@ public class ScorePanel extends JPanel implements Observer {
 		add(ScoreLbl);
 		// ScoreLbl.setText("HI");
 		add(HealthLbl);
-<<<<<<< HEAD
+
 		
 		lblTime = new JLabel();
 		lblTime.setText("Time :");
 		lblTime.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblTime.setBounds(0, 70, 354, 31);
+		lblTime.setBounds(0, 70, 45, 31);
 		add(lblTime);
 		
 		label_2 = new JLabel();
 		label_2.setText("0");
 		label_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-		label_2.setBounds(55, 70, 299, 31);
+		label_2.setBounds(55, 70, 23, 31);
 		add(label_2);
-=======
 		btnSave.addActionListener(al);
-		btnLoad.setBounds(115, 223, 135, 75);
-		btnSave.setBounds(10, 275, 89, 23);
+		btnLoad.setBounds(315, 70, 125, 31);
+		btnSave.setBounds(338, 17, 89, 23);
 		this.add(btnSave);
 		this.add(btnLoad);
->>>>>>> memento
 	}
 
 	public void update(Observable observable, Object change) {
