@@ -88,4 +88,10 @@ public class PlayerWithArmor extends PlayerDecorator {
 	public Image getCurrent() {
 		return player1.getCurrent();
 	}
+
+	@Override
+	public int getNumberOfBullets() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

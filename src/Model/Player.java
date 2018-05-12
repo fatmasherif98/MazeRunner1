@@ -19,6 +19,7 @@ public class Player implements  PlayerInterface {
 	private Health health;
 	private String PlayerType;
 	private Board board;
+
 	private int numberOfBullets=6;
 	
 	
@@ -30,7 +31,6 @@ public int getNumberOfBullets() {
 	public void setNumberOfBullets(int numberOfBullets) {
 		this.numberOfBullets = numberOfBullets;
 	}
-
 
 public Player() 
 { 	
@@ -104,6 +104,7 @@ public void setCurrentPlayer(Image img)
 {
 	this.current=img;
 }
+
 
 
 public void movePlayer(Cell state,String type,int dx , int dy)

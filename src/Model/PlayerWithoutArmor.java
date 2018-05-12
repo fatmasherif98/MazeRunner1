@@ -98,4 +98,10 @@ public class PlayerWithoutArmor extends PlayerDecorator {
 
 		return player1.getCurrent();
 	}
+
+	@Override
+	public int getNumberOfBullets() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
