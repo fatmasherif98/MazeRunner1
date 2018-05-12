@@ -58,7 +58,8 @@ public class KeyListener extends KeyAdapter {
 		}
 		if(keycode==KeyEvent.VK_SPACE)
 		{ System.out.println("Space Pressed");
-		 	shootClass.shoot(Direction, maximum);
+		 shootClass.shoot(Direction, maximum);
+		 
 		}
 
 		board.repaint();
