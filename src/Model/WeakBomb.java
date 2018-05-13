@@ -39,6 +39,7 @@ public class WeakBomb extends Bomb implements CellState
 		p.getHealth().setHealth(health);}
 		else {
 			p=new PlayerWithoutArmor(p);
+			System.out.println("after weak bomb" + p.Description());
 			board = Board.getBoard();
 			board.setP(p);
 			}

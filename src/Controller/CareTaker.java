@@ -8,6 +8,7 @@ public class CareTaker {
 
 	   public void add(Memento state){
 	      mementoList.add(state);
+	      
 	   }
 
 	   public Memento get(int index){

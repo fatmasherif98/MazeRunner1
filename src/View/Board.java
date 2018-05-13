@@ -52,25 +52,17 @@ public class Board extends JPanel implements Serializable{
 		return p;
 	}
 
-	/*
-	 * private Board( GameController viewController) {
-	 * 
-	 * this.viewController = viewController; timer = new Timer(25, (ActionListener)
-	 * this); timer.start(); }
-	 */
-	// public void actionPerformed( ActionEvent e) {
-	// repaint();
-	// }
+	
 
 	public void setP(PlayerInterface p) {
 		this.p = p;
 		keylistener.setP(p);
+		System.out.println("In set p function player is "+ p.Description());
 	}
 
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		// map.openFile();
-		// map.readFile();
+
 		System.out.println("flag");
 		endgame.CheckLose();
 		endgame.CheckWin();	

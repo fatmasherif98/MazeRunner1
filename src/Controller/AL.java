@@ -13,7 +13,7 @@ public class AL implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		board = Board.getBoard();
-		if( e.getActionCommand().equalsIgnoreCase("save")) {
+		if( e.getActionCommand().equals("save") ) {
 		saver.save();	
 		} else {
 			loader.load();

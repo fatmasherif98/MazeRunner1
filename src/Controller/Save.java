@@ -17,15 +17,15 @@ public class Save {
 	
 	private Board board;
 	private PlayerInterface player;
-	Originator originator = new Originator();
-	InformationPlayer infoPlayer;
-    CareTaker careTaker = new CareTaker();
+	private Originator originator = new Originator();
+	private InformationPlayer infoPlayer;
+    private CareTaker careTaker = new CareTaker();
 	
 public void save() {
 	board = Board.getBoard();
 	player = board.getP();
 	player.setMapArray(board.getMap().getMapArray());
-	
+	System.out.println("before memento "+ player.Description());
     originator.setState(player);
     careTaker.add(originator.saveStateToMemento());
     originator.getStateFromMemento(careTaker.get(0)); 
@@ -34,6 +34,7 @@ public void save() {
     
     infoPlayer = new InformationPlayer(player.getTileX(), player.getTileY(), player.getScore().getScore(), 
     		player.getHealth().getHealth(), player.getNumberOfBullets(), player.getMapArray() , player.Description());
+    System.out.println("in saving and after memento" +player.Description());
     
     
     try {

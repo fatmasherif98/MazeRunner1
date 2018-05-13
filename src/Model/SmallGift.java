@@ -31,11 +31,8 @@ public class SmallGift extends Gift implements CellState
 	
 		int Score =p.getScore().getScore()+this.getIncreaseFactor();
 		p.getScore().setScore(Score);
-		//System.out.println(" move" +	mapArray[p.getTileX()+dx][p.getTileY()+dy]);
 		mapArray[p.getTileX()+dx][p.getTileY()+dy]="g";
-	//	System.out.println(" move" +	mapArray[p.getTileX()+dx][p.getTileY()+dy]);
-		//System.out.println("x"+(p.getTileX()+dx)+"y"+(p.getTileY()+dy));
-		//p.movePlayer(dx, dy);
+	
 	
 		
 	}

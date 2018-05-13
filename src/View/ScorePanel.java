@@ -93,9 +93,11 @@ public class ScorePanel extends JPanel implements Observer {
 		score.addObserver(this);
 		ScoreLbl = new JLabel();
 		btnSave = new JButton("");
+		btnSave.setActionCommand("save");
 		btnSave.setBackground(Color.WHITE);
 		btnSave.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-save-all-30.png")));
 		btnSave.setFocusable(false);
+		
 		btnLoad = new JButton("");
 		btnLoad.setBackground(Color.WHITE);
 		btnLoad.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-reset-32 (1).png")));
@@ -159,6 +161,7 @@ public class ScorePanel extends JPanel implements Observer {
 		BulletLbl.setBounds(309, 52, 33, 31);
 		add(BulletLbl);
 		BulletLbl.setText(String.valueOf(player.getNumberOfBullets()));
+		
 		
 		JButton btnPause = new JButton("");
 		btnPause.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-pause-30.png")));
