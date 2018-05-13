@@ -12,7 +12,7 @@ public class Path implements CellState{
 	
 	public Path( Cell newCell) {
 		cell = newCell;
-		img = new ImageIcon(this.getClass().getResource("/images/icons8-square-30.png"));
+		img = new ImageIcon(this.getClass().getResource("/images/icons8-square-30 (2).png"));
 		Treeimg = img.getImage();
 	}
 	public void draw(int x, int y, Graphics g) {

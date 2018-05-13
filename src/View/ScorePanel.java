@@ -92,9 +92,13 @@ public class ScorePanel extends JPanel implements Observer {
 		Health = new JLabel();
 		score.addObserver(this);
 		ScoreLbl = new JLabel();
-		btnSave = new JButton("save");
+		btnSave = new JButton("");
+		btnSave.setBackground(Color.WHITE);
+		btnSave.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-save-all-30.png")));
 		btnSave.setFocusable(false);
-		btnLoad = new JButton("load previous game");
+		btnLoad = new JButton("");
+		btnLoad.setBackground(Color.WHITE);
+		btnLoad.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-reset-32 (1).png")));
 		btnLoad.setFocusable(false);
 		btnLoad.addActionListener(al);
 		ScoreLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -104,13 +108,13 @@ public class ScorePanel extends JPanel implements Observer {
 
 		HealthLbl = new JLabel();
 		HealthLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		ScoreLbl.setBounds(101, 11, 33, 31);
+		ScoreLbl.setBounds(102, 3, 33, 31);
 		// Bullets.setBounds(10, 213, 430, 34);
 		// Bullets.setText("Health:");
 
 		setLayout(null);
 
-		HealthLbl.setBounds(101, 41, 45, 31);
+		HealthLbl.setBounds(102, 28, 33, 31);
 		int score = player.getScore().getScore();
 		int health = player.getHealth().getHealth();
 		// int Bullets=player.getNumberOfBullets();
@@ -126,41 +130,39 @@ public class ScorePanel extends JPanel implements Observer {
 		lblTime = new JLabel();
 		lblTime.setText("Time :");
 		lblTime.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblTime.setBounds(0, 70, 45, 31);
+		lblTime.setBounds(0, 61, 45, 31);
 		add(lblTime);
 
 		TimeDsiplaylbl = new JLabel();
 		TimeDsiplaylbl.setText("0");
 		TimeDsiplaylbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		TimeDsiplaylbl.setBounds(101, 70, 23, 31);
+		TimeDsiplaylbl.setBounds(102, 61, 23, 31);
 		add(TimeDsiplaylbl);
 		btnSave.addActionListener(al);
-		btnLoad.setBounds(315, 70, 125, 31);
-		btnSave.setBounds(315, 17, 102, 25);
+		btnLoad.setBounds(244, 10, 45, 31);
+		btnSave.setBounds(299, 10, 45, 31);
 		this.add(btnSave);
 		this.add(btnLoad);
 
 		JLabel ScoreLabel = new JLabel("Score:");
 		ScoreLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		ScoreLabel.setBounds(0, 19, 66, 14);
+		ScoreLabel.setBounds(0, 11, 66, 14);
 		add(ScoreLabel);
 
 		JLabel HealthLabel = new JLabel("Health:");
 		HealthLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		HealthLabel.setBounds(0, 49, 66, 14);
+		HealthLabel.setBounds(0, 36, 66, 14);
 		add(HealthLabel);
 
 		BulletLbl = new JLabel();
 		BulletLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		BulletLbl.setBounds(101, 95, 33, 31);
+		BulletLbl.setBounds(309, 52, 33, 31);
 		add(BulletLbl);
 		BulletLbl.setText(String.valueOf(player.getNumberOfBullets()));
-		JLabel lblBullets = new JLabel("Bullets");
-		lblBullets.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblBullets.setBounds(0, 103, 66, 14);
-		add(lblBullets);
 		
-		JButton btnPause = new JButton("Pause");
+		JButton btnPause = new JButton("");
+		btnPause.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-pause-30.png")));
+		btnPause.setBackground(Color.WHITE);
 		btnPause.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{	isPaused=true;
@@ -169,10 +171,12 @@ public class ScorePanel extends JPanel implements Observer {
 			}
 		});
 		btnPause.setFocusable(false);
-		btnPause.setBounds(213, 47, 102, 25);
+		btnPause.setBounds(354, 10, 45, 31);
 		add(btnPause);
 		
-		btnUnpause = new JButton("UnPause");
+		btnUnpause = new JButton("");
+		btnUnpause.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-resume-button-30.png")));
+		btnUnpause.setBackground(Color.WHITE);
 		btnUnpause.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				time.start();
@@ -181,8 +185,15 @@ public class ScorePanel extends JPanel implements Observer {
 			}
 		});
 		btnUnpause.setFocusable(false);
-		btnUnpause.setBounds(203, 76, 102, 25);
+		btnUnpause.setBounds(410, 10, 45, 31);
 		add(btnUnpause);
+		
+		JLabel label = new JLabel();
+		label.setText(":");
+		label.setIcon(new ImageIcon(ScorePanel.class.getResource("/images/icons8-ammo-26.png")));
+		label.setFont(new Font("Tahoma", Font.BOLD, 15));
+		label.setBounds(254, 52, 51, 25);
+		add(label);
 		
 		time= new Timer (1000,new ActionListener() {
 			

@@ -84,7 +84,7 @@ public class PlayerWithArmor extends PlayerDecorator implements Serializable {
 
 	public Image getPlayerUp() {
 		System.out.println("GET PLAYER UP");
-		return new ImageIcon(this.getClass().getResource("/images/icons8-cat-profile-24 (1).png")).getImage();
+		return new ImageIcon(this.getClass().getResource("/images/imageedit_3_5774858277.png")).getImage();
 	}
 
 	public void setCurrentPlayer(Image img) {
