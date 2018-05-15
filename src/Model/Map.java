@@ -29,7 +29,7 @@ public class Map implements Serializable {
 	public void openFile() {
 		try { // System.out.println("FILE OPENED");
 			// scan = new Scanner( new File("Map.txt"));
-			scan = new Scanner(new File(getClass().getResource("/Files/Map.txt").getFile()));
+			scan = new Scanner(new File(this.getClass().getResource("/Files/Map.txt").getFile()));
 
 		} catch (Exception e) {
 			System.out.println("Error loading map");

@@ -138,7 +138,7 @@ public class ScorePanel extends JPanel implements Observer {
 		TimeDsiplaylbl = new JLabel();
 		TimeDsiplaylbl.setText("0");
 		TimeDsiplaylbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		TimeDsiplaylbl.setBounds(102, 61, 23, 31);
+		TimeDsiplaylbl.setBounds(102, 61, 146, 31);
 		add(TimeDsiplaylbl);
 		btnSave.addActionListener(al);
 		btnLoad.setBounds(244, 10, 45, 31);

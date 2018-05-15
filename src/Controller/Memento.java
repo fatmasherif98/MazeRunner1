@@ -4,7 +4,7 @@ import Model.PlayerInterface;
 
 public class Memento {
 
-	private PlayerInterface player;
+	private static PlayerInterface player;
 
 	public Memento(PlayerInterface newplayer) {
 		
